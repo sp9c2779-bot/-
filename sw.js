@@ -1,5 +1,5 @@
-const CACHE='shot-note-22',TILES='shot-note-tiles';
-const FILES=['./','./index.html','./assets-1.json?v=16','./assets-2.json?v=16','./assets-kaho.json?v=1'];
+const CACHE='shot-note-23',TILES='shot-note-tiles';
+const FILES=['./','./index.html','./assets-1.json?v=16','./assets-2.json?v=16','./assets-kaho.json?v=1','./assets-waka.json?v=1'];
 // Unchanged map data is copied from the previous version's cache instead of downloading 29MB again.
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>Promise.all(FILES.map(f=>(f.includes('assets-')?caches.match(f):Promise.resolve(null)).then(r=>r||fetch(f,{cache:'reload'})).then(r=>{if(!r.ok)throw Error(f);return c.put(f,r);})))).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE&&k!==TILES).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
