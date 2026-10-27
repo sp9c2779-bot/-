@@ -1,4 +1,4 @@
-const CACHE='shot-note-20',TILES='shot-note-tiles';
+const CACHE='shot-note-21',TILES='shot-note-tiles';
 const FILES=['./','./index.html','./assets-1.json?v=16','./assets-2.json?v=16'];
 // Unchanged map data is copied from the previous version's cache instead of downloading 29MB again.
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>Promise.all(FILES.map(f=>(f.includes('assets-')?caches.match(f):Promise.resolve(null)).then(r=>r||fetch(f,{cache:'reload'})).then(r=>{if(!r.ok)throw Error(f);return c.put(f,r);})))).then(()=>self.skipWaiting()));});
