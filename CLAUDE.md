@@ -1,7 +1,7 @@
 # ショットノート（ゴルフのショット記録アプリ）
 
 iPhone の Safari で使う、ゴルフのショット記録 Web アプリです。GitHub Pages（main ブランチのルート）で公開しています。
-公開 URL: https://sp9c2779-bot.github.io/-/
+公開 URL: https://yuuapps.github.io/-/
 
 利用者とのやり取りは日本語で行う。画面の文言も日本語。主な利用環境は iPhone の Safari（ホーム画面に追加して起動）。
 
